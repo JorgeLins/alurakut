@@ -5,6 +5,7 @@ export const ProfileRelationsBoxWrapper = styled(Box)`
   ul {
     display: grid;
     grid-gap: 8px;
+    padding-left: 0px;
     grid-template-columns: 1fr 1fr 1fr; 
     max-height: 220px;
     list-style: none;

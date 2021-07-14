@@ -7,7 +7,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #D9E6F6;
+    background-color: #000000;
+    background-image: url('https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1145360/9fb1f66f3687f84019554b7e334135b36203f84c.jpg');
+    background-size: 60%;
+    background-position: 115%;
+    background-repeat: no-repeat;
   }
 
   #__next {

@@ -1,84 +1,78 @@
-# Example app with styled-components
+<div align="center">
+  <img src=".github/img/Alurakut.png" />
+</div>
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+<br>
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+<div align="center">
+  <a href="https://github.com/Alurakut/loading..."><img src="https://img.shields.io/static/v1?label=Alurakut&message=loading...&color=pink&logo=github" alt="Alurakut - loading..."></a>
+  <a href="https://www.javascript.com/"><img src="https://img.shields.io/badge/Made_with-JavaScript-pink?logo=javascript&logoColor=yellow" alt="Made with JavaScript"></a>
+  <a href="https://www.npmjs.com/package/react"><img src="https://img.shields.io/badge/React-17-pink?logo=react&logoColor=blue" alt="Made with React"></a>
+  <a href="https://github.com/gabrlcj/Alurakut"><img src="https://img.shields.io/github/stars/gabrlcj/Alurakut?style=social" alt="stars - Alurakut"></a>
+</div>
 
-## Preview
+---
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+<h3 align="center">Aplicação com foco em recriar uma das mais nostalgicas rede social que tivemos no passado.</h3>
+<div align="center">
+  <b>
+    <a href="#sobre">Sobre</a> |
+    <a href="#imagens">Imagens</a> |
+    <a href="#tecnologias">Tecnologias</a> |
+    <a href="#instrutores">Instrutores</a> |
+    <a href="#autor">Autor</a>
+  </b>
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+<br>
 
-## Deploy your own
+<div align="center">
+  <img src=".github/img/Imersao-react.png" width="80" />
+</div>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+# Sobre
+**Nesta imersão da [Alura](https://github.com/alura-challenges) nós revivemos a nossa querida rede social Orkut, ou quase isso hahaha, com algumas mudanças e implementações, cada um deixou a rede com a sua cara, assim utilizamos das novas tecnologias para recriar a interface dele.**
 
-## How to use
+**Dentro de 5 dias com utilização de React.js e Next.js nosso objetivo é transformar ela em uma aplicação focada em *SPA* ou *Single Page Application*.**
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
-```
+# Imagens
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+<div align="center">
+  <h4>Página de Login (ainda em contrução):</h4>
+  <img src=".github/img/tela-de-login.png" />
+  <h4>Menu mobile da Home:</h4>
+  <img src=".github/img/mobile-home.png" />
+</div>
 
-### Try it on CodeSandbox
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+# Tecnologias
+### *Linguagens:*
+ - JavaScript
+  
+### *Bibliotecas / Frameworks:*
+  - [Next.js](https://nextjs.org/)
+  - [React.js](https://pt-br.reactjs.org/)
 
-### Notes
+### *Utilitarios:*
+ - [Yarn](https://yarnpkg.com/)
 
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
 
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
+# Instrutores
+**Aqui um agradecimento pelos instrutores dessa imersão incrivel que a Alura sempre proporciona!!!**
 
-**components/StyledLink.js**
+| <a href="https://github.com/omariosouto">Mario Souto</a>  | <a href="https://github.com/peas">Paulo Silveira</a> | <a href="https://github.com/juunegreiros">Juliana Negreiros</a> |
+| --------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
+| <img src="https://unavatar.now.sh/github/omariosouto" width="230" /> | <img src="https://unavatar.now.sh/github/peas" width="230" /> | <img src="https://unavatar.now.sh/github/juunegreiros" width="230" /> |
 
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
 
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
+# Autor
 
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+<img src="https://unavatar.now.sh/github/gabrlcj" width="275" />
 
-  &:hover {
-    color: #40a9ff;
-  }
+## Gabriel Bittencourt Penteado 🔰
 
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
+#### Feito com 🤎 por Gabriel B. Penteado. Entre em contato! 👋🏽
 
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+[![Linkedin Badge](https://img.shields.io/badge/-Gabriel-orange?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabriel-bittencourt-penteado/)](https://www.linkedin.com/in/gabriel-bittencourt-penteado/)
