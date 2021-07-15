@@ -54,7 +54,7 @@ export function AlurakutMenu({ githubUser }) {
 }
 AlurakutMenu.Wrapper = styled.header`
   width: 100%;
-  background-color: #308BC5;
+  background-color: #4a0607;
 
   .alurakutMenuProfileSidebar {
     background: white;
@@ -96,12 +96,12 @@ AlurakutMenu.Wrapper = styled.header`
   }
 
   .container {
-    background-color: #308BC5;
+    background-color: #4a0607;
     padding: 7px 16px;
     max-width: 1110px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: relative;
     z-index: 101;
     @media(min-width: 860px) {
@@ -295,7 +295,7 @@ OrkutNostalgicIconSet.List = styled.ul`
   flex-wrap: wrap;
   li {
     font-size: 12px;
-    color: #5A5A5A;
+    color: #FFF;
     display: grid;
     grid-template-areas:
       "title title"
@@ -307,10 +307,12 @@ OrkutNostalgicIconSet.List = styled.ul`
     .OrkutNostalgicIconSet__title {
       display: block;
       font-style: italic; 
+      color: #FFF;
     }
     .OrkutNostalgicIconSet__number {
       min-width: 15px;
       display: flex;
+      color: #FFF;
       align-items: center;
       justify-content: flex-start;
       .OrkutNostalgicIconSet__iconSample {

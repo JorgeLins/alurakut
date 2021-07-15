@@ -65,14 +65,3 @@
 | <a href="https://github.com/omariosouto">Mario Souto</a>  | <a href="https://github.com/peas">Paulo Silveira</a> | <a href="https://github.com/juunegreiros">Juliana Negreiros</a> |
 | --------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------- |
 | <img src="https://unavatar.now.sh/github/omariosouto" width="230" /> | <img src="https://unavatar.now.sh/github/peas" width="230" /> | <img src="https://unavatar.now.sh/github/juunegreiros" width="230" /> |
-
-
-# Autor
-
-<img src="https://unavatar.now.sh/github/gabrlcj" width="275" />
-
-## Gabriel Bittencourt Penteado 🔰
-
-#### Feito com 🤎 por Gabriel B. Penteado. Entre em contato! 👋🏽
-
-[![Linkedin Badge](https://img.shields.io/badge/-Gabriel-orange?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabriel-bittencourt-penteado/)](https://www.linkedin.com/in/gabriel-bittencourt-penteado/)
