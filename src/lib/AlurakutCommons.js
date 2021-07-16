@@ -119,7 +119,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
 
     nav {
-      display: none;
+      display: flex;
       @media(min-width: 860px) {
         display: flex;
       }
@@ -127,11 +127,12 @@ AlurakutMenu.Wrapper = styled.header`
         font-size: 12px;
         color: white;
         padding: 10px 16px;
+        transform: translateX(-2px);
         position: relative;
         text-decoration: none;
         &:after {
           content: " ";
-          background-color: #5292C1;
+          background-color: #FFF;
           display: block;
           position: absolute;
           width: 1px;
@@ -145,7 +146,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     input {
       color: #ffffff;
-      background: #5579A1;
+      background: #79221e;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -164,7 +165,7 @@ AlurakutMenu.Logo = styled.img`
   background-color: #ffffff;
   padding: 9px 14px;
   border-radius: 1000px;
-  height: 34px;
+  height: 15px;
 `;
 
 function AlurakutMenuProfileSidebar({ githubUser }) {
@@ -288,6 +289,7 @@ export function OrkutNostalgicIconSet(props) {
   )
 }
 OrkutNostalgicIconSet.List = styled.ul`
+  padding-left: 0px;
   margin-top: 32px;
   list-style: none;
   display: flex;

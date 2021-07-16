@@ -50,22 +50,7 @@ function ProfileRelationsBox(propriedades){
 
 
 export default function Home() {
-  const [comunidades, setComunidades] = React.useState([{
-    id: '46184351685415478534157',
-    title: 'Eu odeio acordar cedo',
-    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
-  },
-  {
-    id: '46184357285415478534157',
-    title: 'Foda é meu pai. Eu sou fodinha',
-    image: 'https://scontent.ffor41-1.fna.fbcdn.net/v/t1.18169-0/cp0/e15/q65/c11.0.64.64a/p64x64/422510_330626123627377_424165018_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=85a577&efg=eyJpIjoidCJ9&_nc_eui2=AeFmdx-F4d-zHzzq3ENlrWKFQMHwGxnV6QJAwfAbGdXpAqEYXKb_G8JbNf5R7oxSfSJ1ComnRT_r39u5NtIlg4m5&_nc_ohc=HD8uPep3wFIAX_CBcWF&tn=-W63MigegE6bgUU7&_nc_ht=scontent.ffor41-1.fna&oh=7d008ecfe3bcf6a473b77d15332da2fe&oe=60F4E3D1'
-  },
-  {
-    id: '35858544618415478534157',
-    title: 'Eu odeio segunda-feira',
-    image: 'https://img10.orkut.br.com/community/f5578eb70f74221d1488a9d47b1fd250.JPG'
-  }
-]);
+  const [comunidades, setComunidades] = React.useState([]);
   const githubUSer = 'jorgelins';
   // const comunidade = ['AluraKut'];
   const amigos = ['yagocam', 'BernardErick', 'italoteix', 'marcobrunodev', 'omariosouto']
@@ -80,6 +65,32 @@ export default function Home() {
     .then(function(repostaCompleta) {
       setSeguidores(repostaCompleta);
     })
+
+
+    fetch('https://graphql.datocms.com/', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'eb16627374c7988158a993295d6445',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({ "query": `query {
+        allCommunities {
+          id
+          title
+          imageUrl
+          creatorSlug
+        }
+      }` })
+    })
+    .then((response) => response.json())
+    .then((respostaCompleta) => {
+      const comunidadesDoDato = respostaCompleta.data.allCommunities
+
+      setComunidades(comunidadesDoDato)
+      console.log(respostaCompleta)
+    })
+
   }, [])
 
   return (
@@ -94,7 +105,7 @@ export default function Home() {
         <div className='welcomeArea' style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className='title'>
-              Bem Vindo (a)
+              Bem Vindo(a)
             </h1>
 
             <OrkutNostalgicIconSet />
@@ -107,12 +118,27 @@ export default function Home() {
                 const dadosDoForm = new FormData(e.target);
 
                 const comunidade = {
-                  id: new Date().toISOString(),
-                  titulo: dadosDoForm.get('title'),
-                  imagem: dadosDoForm.get('image')
+                  title: dadosDoForm.get('title'),
+                  imageUrl: dadosDoForm.get('image'),
+                  creatorSlug: githubUSer,
                 }
-                const comunidadesAtualizadas = [...comunidades, comunidade]
-                setComunidades(comunidadesAtualizadas)
+
+                fetch('/api/comunidades', {
+                  method: "POST",
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(comunidade),
+                })
+                .then(async (response) => {
+                  const dados = await response.json();
+                  console.log(dados.registroCriado);
+                  const comunidade = dados.registroCriado;
+                  const comunidadesAtualizadas = [...comunidades, comunidade];
+                  setComunidades(comunidadesAtualizadas);
+                })
+
+
 
             }}>
 
@@ -168,9 +194,9 @@ export default function Home() {
                 {comunidades.map((itemAtual) => {
                   return (
                     <li key={itemAtual.id}>
-                      <a href={`/users/${itemAtual.title}`}>
-                        { <img src={itemAtual.image}/> }
-                        <span>{itemAtual.title}</span>
+                      <a href={`/communities/${itemAtual.id}`}>
+                      <img src={itemAtual.imageUrl} />
+                      <span>{itemAtual.title}</span>
                       </a>
                     </li>
                   )
