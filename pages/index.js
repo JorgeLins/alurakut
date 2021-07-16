@@ -168,6 +168,24 @@ export default function Home() {
           <ProfileRelationsBox title='Seguidores' items={seguidores} />
        
           <ProfileRelationsBoxWrapper>
+          <h2 className='smallTitle'>
+              Comunidades ({comunidades.length})
+            </h2>
+            <ul>
+                {comunidades.map((itemAtual) => {
+                  return (
+                    <li key={itemAtual.id}>
+                      <a href={`/communities/${itemAtual.id}`}>
+                      <img src={itemAtual.imageUrl} />
+                      <span>{itemAtual.title}</span>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+          </ProfileRelationsBoxWrapper>
+
+          <ProfileRelationsBoxWrapper>
             <h2 className='smallTitle'>
               Pessoas da comunidade ({amigos.length})
             </h2>
@@ -186,23 +204,7 @@ export default function Home() {
             </ul>
           </ProfileRelationsBoxWrapper>
 
-          <ProfileRelationsBoxWrapper>
-          <h2 className='smallTitle'>
-              Comunidades ({comunidades.length})
-            </h2>
-            <ul>
-                {comunidades.map((itemAtual) => {
-                  return (
-                    <li key={itemAtual.id}>
-                      <a href={`/communities/${itemAtual.id}`}>
-                      <img src={itemAtual.imageUrl} />
-                      <span>{itemAtual.title}</span>
-                      </a>
-                    </li>
-                  )
-                })}
-              </ul>
-          </ProfileRelationsBoxWrapper>
+          
         </div>
     </MainGrid>
   </>
